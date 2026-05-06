@@ -1,7 +1,7 @@
 # Dark Terminal
 🔧 ```bash install.sh```
 
-🌎 ```darkterminal```
+🌎 ```spane```
 
 
 ## Equipe
