@@ -443,8 +443,19 @@ static int x11_to_keycode(KeySym ks) {
     if (ks == XK_Left || ks == XK_a || ks == XK_A) return 37;
     if (ks == XK_Right || ks == XK_d || ks == XK_D) return 39;
     if (ks == XK_r || ks == XK_R) return 82;
-    if (ks == XK_Return) return 13;
-    if (ks == XK_space) return 32;
+    if (ks == XK_n || ks == XK_N) return 78;
+    if (ks == XK_q || ks == XK_Q) return 81;
+    if (ks == XK_Return || ks == XK_KP_Enter) return 13;
+    if (ks == XK_space || ks == XK_KP_Space) return 32;
+    if (ks == XK_BackSpace) return 8;
+    if (ks == XK_Delete || ks == XK_KP_Delete) return 127;
+    
+    // NOVO: Mapeamento de dígitos do teclado principal
+    if (ks >= XK_0 && ks <= XK_9) return '0' + (ks - XK_0);
+    
+    // NOVO: Mapeamento de dígitos do keypad numérico
+    if (ks >= XK_KP_0 && ks <= XK_KP_9) return '0' + (ks - XK_KP_0);
+    
     return 0;
 }
 
